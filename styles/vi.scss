@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+
+    height: 100%;
+
+    padding: 0;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.vi-view {
+    margin: 16px;
+
+    padding: 8px;
+
+    row-gap: 8px;
+
+    display: flex;
+
+    min-height: 0;
+
+    font-size: 14px;
+    font-family: "Source Code Pro";
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+
+    flex-grow: 1;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background-color: hsl(0, 0%, 95%);
+
+    &.insert-mode {
+        .lines {
+            .line {
+                .character {
+                    &.cursor {
+                        color: initial;
+
+                        background-color: initial;
+
+                        border-left-width: 1px;
+                        border-left-style: solid;
+                        border-left-color: black;
+
+                        &.last {
+                            width: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .lines {
+        padding: 4px;
+
+        overflow-x: auto;
+        overflow-y: auto;
+
+        background-color: white;
+
+        .line {
+            display: flex;
+
+            flex-direction: row;
+
+            background-color: white;
+
+            .character {
+                width: 0.7em;
+                height: 1.2em;
+
+                display: inline-flex;
+
+                box-sizing: border-box;
+
+                line-height: 1em;
+
+                flex-shrink: 0;
+                flex-direction: row;
+
+                &.cursor {
+                    color: white;
+
+                    background-color: black;
+                }
+            }
+        }
+    }
+
+    .status-bar {
+        height: 1.2em;
+
+        padding: 4px;
+
+        display: flex;
+
+        column-gap: 8px;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        background-color: white;
+    }
+}
