@@ -19,6 +19,8 @@ module HTML
                     element.value = value
                 when 'disabled'
                     element.disabled = value
+                when 'required'
+                    element.required = value
                 when 'selected'
                     element.selected = value
                 when 'placeholder'
@@ -100,6 +102,8 @@ module Kernel
                     HTML.element.title = args[0]
                 when 'value'
                     HTML.element.value = args[0]
+                when 'disabled'
+                    HTML.element.disabled = true
                 when 'required'
                     HTML.element.required = true
                 when 'selected'
