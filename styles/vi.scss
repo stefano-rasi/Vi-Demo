@@ -35,60 +35,31 @@ body {
 
     background-color: hsl(0, 0%, 95%);
 
-    &.insert-mode {
-        .lines {
-            .line {
-                .character {
-                    &.cursor {
-                        color: initial;
+    &:focus {
+        outline: none;
 
-                        background-color: initial;
-
-                        border-left-width: 1px;
-                        border-left-style: solid;
-                        border-left-color: black;
-
-                        &.last {
-                            width: 0;
-                        }
-                    }
-                }
-            }
-        }
+        border-width: 2px;
     }
 
-    .lines {
-        padding: 4px;
+    &.insert-mode {
+        .lines-container {
+            .lines {
+                .line {
+                    .character {
+                        &.cursor {
+                            color: initial;
 
-        overflow-x: auto;
-        overflow-y: auto;
+                            background-color: initial;
 
-        background-color: white;
+                            border-left-width: 1px;
+                            border-left-style: solid;
+                            border-left-color: black;
 
-        .line {
-            display: flex;
-
-            flex-direction: row;
-
-            background-color: white;
-
-            .character {
-                width: 0.7em;
-                height: 1.2em;
-
-                display: inline-flex;
-
-                box-sizing: border-box;
-
-                line-height: 1em;
-
-                flex-shrink: 0;
-                flex-direction: row;
-
-                &.cursor {
-                    color: white;
-
-                    background-color: black;
+                            &.last {
+                                width: 0;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -103,10 +74,60 @@ body {
 
         column-gap: 8px;
 
+        flex-grow: 0;
         flex-direction: row;
 
         justify-content: space-between;
 
         background-color: white;
+    }
+
+    .lines-container {
+        display: flex;
+
+        flex-grow: 1;
+
+        overflow-x: auto;
+        overflow-y: auto;
+
+        align-items: start;
+
+        flex-direction: row;
+
+        .lines {
+            padding: 4px;
+
+            display: flex;
+
+            flex-grow: 1;
+            flex-direction: column;
+
+            background-color: white;
+
+            .line {
+                display: flex;
+
+                flex-direction: row;
+
+                .character {
+                    height: 1.4em;
+
+                    display: inline-flex;
+
+                    box-sizing: border-box;
+
+                    line-height: 1em;
+
+                    flex-shrink: 0;
+                    flex-direction: row;
+
+                    &.cursor {
+                        color: white;
+
+                        background-color: black;
+                    }
+                }
+            }
+        }
     }
 }
