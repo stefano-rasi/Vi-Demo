@@ -5,7 +5,7 @@ require 'opal'
 require 'sinatra'
 
 get '/' do
-    slim :vi
+    slim :app
 end
 
 get '/views/*' do
