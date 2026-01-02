@@ -33,11 +33,21 @@ body {
         .cursor {
             color: white;
 
-            background-color: black;
+            margin: 0;
 
-            border-left-width: 1px;
-            border-left-style: solid;
-            border-left-color: white;
+            padding: 0;
+
+            border: none;
+            outline: none;
+
+            caret-color: white;
+
+            font-size: 14px;
+            font-family: "Source Code Pro";
+
+            field-sizing: content;
+
+            background-color: black;
         }
     }
 
