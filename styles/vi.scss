@@ -11,11 +11,9 @@ body {
 }
 
 .vi-view {
-    margin: 16px;
+    color: white;
 
-    padding: 8px;
-
-    row-gap: 8px;
+    padding: 16px;
 
     display: flex;
 
@@ -24,110 +22,70 @@ body {
     font-size: 14px;
     font-family: "Source Code Pro";
 
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-
     flex-grow: 1;
     flex-direction: column;
 
-    justify-content: space-between;
-
-    background-color: hsl(0, 0%, 95%);
-
-    &:focus {
-        outline: none;
-
-        border-width: 2px;
-    }
+    background-color: black;
 
     &.insert-mode {
-        .lines-container {
-            .lines {
-                .line {
-                    .character {
-                        &.cursor {
-                            color: initial;
+        .cursor {
+            color: white;
 
-                            background-color: initial;
+            background-color: black;
 
-                            border-left-width: 1px;
-                            border-left-style: solid;
-                            border-left-color: black;
+            border-left-width: 1px;
+            border-left-style: solid;
+            border-left-color: white;
+        }
+    }
 
-                            &.last {
-                                width: 0;
-                            }
-                        }
-                    }
-                }
+    &.normal-mode {
+        .cursor {
+            color: black;
+
+            background-color: white;
+        }
+    }
+
+    .lines {
+        display: flex;
+
+        overflow-x: auto;
+        overflow-y: auto;
+
+        flex-grow: 1;
+        flex-direction: column;
+
+        .line {
+            display: flex;
+
+            flex-direction: row;
+
+            .character {
+                height: 1.4em;
+
+                display: inline-flex;
+
+                line-height: 1em;
+
+                align-items: center;
+
+                flex-shrink: 0;
+                flex-direction: row;
             }
         }
     }
 
     .status-bar {
-        height: 1.2em;
-
-        padding: 4px;
-
         display: flex;
 
         column-gap: 8px;
+
+        margin-top: 8px;
 
         flex-grow: 0;
         flex-direction: row;
 
         justify-content: space-between;
-
-        background-color: white;
-    }
-
-    .lines-container {
-        display: flex;
-
-        flex-grow: 1;
-
-        overflow-x: auto;
-        overflow-y: auto;
-
-        align-items: start;
-
-        flex-direction: row;
-
-        .lines {
-            padding: 4px;
-
-            display: flex;
-
-            flex-grow: 1;
-            flex-direction: column;
-
-            background-color: white;
-
-            .line {
-                display: flex;
-
-                flex-direction: row;
-
-                .character {
-                    height: 1.4em;
-
-                    display: inline-flex;
-
-                    box-sizing: border-box;
-
-                    line-height: 1em;
-
-                    flex-shrink: 0;
-                    flex-direction: row;
-
-                    &.cursor {
-                        color: white;
-
-                        background-color: black;
-                    }
-                }
-            }
-        }
     }
 }
