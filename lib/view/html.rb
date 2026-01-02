@@ -5,7 +5,9 @@ require_relative 'view'
 require_relative 'document'
 
 module HTML
-    def HTML.method_missing(name, *args, **kwargs, &block)
+    extend self
+
+    def method_missing(name, *args, **kwargs, &block)
         element = Document.createElement(name)
 
         if !kwargs.empty?
@@ -50,7 +52,7 @@ module HTML
         element
     end
 
-    def HTML.element
+    def element
         @element
     end
 end

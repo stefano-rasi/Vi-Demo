@@ -2,7 +2,9 @@ require 'opal'
 require 'native'
 
 module HTTP
-    def HTTP.method_missing(name, *args, &block)
+    extend self
+
+    def method_missing(name, *args, &block)
         options = {
             body: args[1],
             method: name.upcase
