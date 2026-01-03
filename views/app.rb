@@ -1,7 +1,7 @@
-require 'lib/Vi/vi.rb'
+require 'lib/vi/vi.rb'
 
-require 'lib/View/window'
-require 'lib/View/document'
+require 'lib/view/window'
+require 'lib/view/document'
 
 TEXT = [
     "line 1",
