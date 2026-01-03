@@ -1,6 +1,6 @@
-[submodule "lib/Vi"]
+[submodule "lib/vi"]
 	path = lib/Vi
 	url = https://github.com/stefano-rasi/Vi.git
-[submodule "lib/View"]
-	path = lib/View
+[submodule "lib/view"]
+	path = lib/view
 	url = https://github.com/stefano-rasi/View.git
