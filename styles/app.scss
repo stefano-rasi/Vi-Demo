@@ -1,0 +1,56 @@
+body {
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.vi-view {
+    color: white;
+
+    row-gap: 8px;
+
+    padding: 16px;
+
+    flex-grow: 1;
+
+    min-height: 0;
+
+    line-height: 1.4em;
+
+    font-size: 14px;
+    font-family: "Source Code Pro";
+
+    background-color: black;
+
+    &.insert-mode {
+        .cursor {
+            color: white;
+
+            caret-color: white;
+
+            line-height: 1.4em;
+
+            font-size: 14px;
+            font-family: "Source Code Pro";
+
+            background-color: black;
+        }
+    }
+
+    &.normal-mode {
+        .cursor {
+            color: black;
+
+            background-color: white;
+        }
+    }
+
+    .status-bar {
+        column-gap: 8px;
+    }
+}

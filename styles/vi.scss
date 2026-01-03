@@ -1,66 +1,17 @@
-body {
-    margin: 0;
-
-    height: 100%;
-
-    padding: 0;
-
-    display: flex;
-
-    flex-direction: column;
-}
-
 .vi-view {
-    color: white;
-
-    row-gap: 8px;
-
-    padding: 16px;
-
     display: flex;
 
-    min-height: 0;
-
-    font-size: 14px;
-    font-family: "Source Code Pro";
-
-    flex-grow: 1;
     flex-direction: column;
-
-    background-color: black;
 
     &.insert-mode {
         .cursor {
-            color: white;
-
             margin: 0;
-
-            height: 1.4em;
-
             padding: 0;
 
             border: none;
-
             outline: none;
 
-            line-height: 1em;
-
-            caret-color: white;
-
-            font-size: 14px;
-            font-family: "Source Code Pro";
-
             field-sizing: content;
-
-            background-color: black;
-        }
-    }
-
-    &.normal-mode {
-        .cursor {
-            color: black;
-
-            background-color: white;
         }
     }
 
@@ -79,24 +30,17 @@ body {
             flex-direction: row;
 
             .character {
-                height: 1.4em;
-
-                display: inline-flex;
-
-                line-height: 1em;
-
-                align-items: center;
+                display: inline-block;
 
                 flex-shrink: 0;
-                flex-direction: row;
+
+                vertical-align: bottom;
             }
         }
     }
 
     .status-bar {
         display: flex;
-
-        column-gap: 8px;
 
         flex-grow: 0;
         flex-direction: row;
