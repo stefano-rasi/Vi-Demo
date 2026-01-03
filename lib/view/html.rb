@@ -10,6 +10,10 @@ module HTML
     def method_missing(name, *args, **kwargs, &block)
         element = Document.createElement(name)
 
+        if !args.empty?
+            element.className = args.compact.join(' ')
+        end
+
         if !kwargs.empty?
             kwargs.each do |key, value|
                 case key
@@ -31,21 +35,13 @@ module HTML
             end
         end
 
-        if !args.empty?
-            element.className = args.compact.join(' ')
-        end
-
         parent = @element
 
-        if parent
-            parent.appendChild(element)
-        end
+        parent.appendChild(element) if parent
 
         @element = element
 
-        if block_given?
-            block.call(element)
-        end
+        block.call(element) if block_given?
 
         @element = parent
 
@@ -73,9 +69,7 @@ module Kernel
 
                         HTML.element.appendChild(view.element)
 
-                        if block_given?
-                            block.call(view)
-                        end
+                        block.call(view) if block_given?
 
                         view
                     else
@@ -85,8 +79,6 @@ module Kernel
                     old_method_missing(name, *args, &block)
                 end
             else
-                name = name.sub(/^_/, '')
-
                 case name
                 when 'on'
                     if block_given?
