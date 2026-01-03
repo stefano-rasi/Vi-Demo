@@ -1,4 +1,4 @@
-require 'lib/vi/vi.rb'
+require 'lib/vi/view'
 
 require 'lib/view/window'
 require 'lib/view/document'
@@ -11,7 +11,7 @@ TEXT = [
 ].join("\n")
 
 Window.addEventListener('load') do
-    vi = Vi.new(TEXT)
+    vi = ViView.new(TEXT)
 
     Document.body.appendChild(vi.element)
 
